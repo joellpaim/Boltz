@@ -9,9 +9,15 @@ body {
 	background: var(--fundo);
 	font-family: 'Poppins', sans-serif;
 }
+.brand-logo {
+    margin-left: 50px;
+    font-weight: 700;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
 
 .brand-logo:hover {
-    color: var(--scolor);
+    color: var(--navcolor);
 }
 
 .card {
@@ -34,12 +40,14 @@ body {
 }
 ul#nav-mobile>li {
     transform: skewX(-15deg) ;
+    border-radius: 15px;
+    margin-right: 50px;
     font-weight: bold;
     transition: 300ms ease-in-out;
 }
 ul#nav-mobile>li:hover {
     text-decoration: none;
-    background-color: var(--scolor);
+    background-color: var(--navcolor);
     color: white; 
 }
 
@@ -53,3 +61,9 @@ ul#nav-mobile>li>span:hover {
 a:hover {
     text-decoration: none;
 }
+
+@media only screen and (max-width: 992px) {
+    .brand-logo {
+        margin-left: 0px;
+    }
+  }

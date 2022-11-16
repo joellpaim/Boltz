@@ -1,14 +1,14 @@
-<nav class="cyan darken-3 p-3"> 
+<nav class="cyan darken-3"> 
     <div class="nav-wrapper">
         <a href="{% url 'index' %}" class="brand-logo">
-            <i class="small material-icons">data_usage</i>Ragnar
+            <i class="small material-icons">data_usage</i>BoltZ
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">          
           {% if user.is_authenticated %}
           <li><a href="{% url 'dispositivos' %}">Dispositivos</a></li>
           <li><a href="#">Serviços</a></li>
           <li><a href="{% url 'admin:login' %}">Area restrita</a></li>
-          <li><a class="mr-5" href="{% url 'admin:logout' %}"><i class="material-icons">logout</i></a></li>
+          <li><a href="{% url 'admin:logout' %}"><i class="material-icons">logout</i></a></li>
           {% else %}
           <li><a href="{% url 'admin:login' %}"><span class="white-text email">Login <i class="material-icons">login</i></span></a></li>
           {% endif %}
@@ -27,7 +27,7 @@
             <a href="#name"><span class="white-text name">{{ user.username }}</span></a>
             <a href="#email"><span class="white-text email">{{ user.email }}</span></a>
         {% else %}
-            <span>Welcome, new user. Please log in.</span>
+            <span class="text-white">Welcome, new user. Please log in.</span>
             <a href="{% url 'admin:login' %}"><span class="white-text email">Login</span></a>
         {% endif %}
         
