@@ -1,0 +1,55 @@
+:root {
+	--pcolor: #006064;
+	--scolor: #F44336;
+	--fundo: #F2F2F2;
+	--navcolor: #444444;
+}
+
+body {
+	background: var(--fundo);
+	font-family: 'Poppins', sans-serif;
+}
+
+.brand-logo:hover {
+    color: var(--scolor);
+}
+
+.card {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 300ms ease-in-out;
+}
+
+.card:hover {
+    background-color: #006064;
+    color: white;
+}
+
+.card-title {
+    background-color: #006064;
+    font-weight: 600 !important;
+    border-radius: 0px 5px 5px 0px;
+    box-shadow: -10px 0px 0px var(--navcolor);
+}
+ul#nav-mobile>li {
+    transform: skewX(-15deg) ;
+    font-weight: bold;
+    transition: 300ms ease-in-out;
+}
+ul#nav-mobile>li:hover {
+    text-decoration: none;
+    background-color: var(--scolor);
+    color: white; 
+}
+
+ul#nav-mobile>li>a:hover {
+    color: white;
+}
+ul#nav-mobile>li>span:hover {
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+}

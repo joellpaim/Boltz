@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <header>
+        {% include 'partials/sidenav.html' %}
+    </header>
+
+    <main>
+        <section class="mt-3">
+            <h1 class="text-center">Dispositivos</h1>
+            <div class="col-md-12 p-3">
+                <div class="row p-3">
+                    {% for dispositivo in dispositivos %}
+                        <div class="card" data-aos="fade-up" data-aos-duration="1500">
+                            <div class="card-image">
+                            <img src="{{ dispositivo.image.url }}">
+                            <span class="card-title">{{ dispositivo.code }}</span>
+                            {% if dispositivo.confiabilidade <= 30 %}
+                            <a class="btn-floating halfway-fab waves-effect waves-light red alerta"><i class="material-icons">assistant_photo</i></a>
+                            {% else %}
+                            <a class="btn-floating halfway-fab waves-effect waves-light blue alerta" ><i class="material-icons">check</i></a>
+                            {% endif %}
+                            </div>
+                            <div class="card-content">
+                                <p class="card-text">Máquina {{ dispositivo.maquina }}</p>
+                                <p class="card-text"> Descrição: {{ dispositivo.name }}</p>
+                                <p class="card-text">Data de revisão: {{ dispositivo.data_rev }}</p>
+                                <hr>
+                                <p>Indíce de confiabilidade</p>
+                                <span></span>
+                                <div class="progress">
+                                    {% if dispositivo.confiabilidade <= 30 %}
+                                    <div name="barra" class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="{{ dispositivo.confiabilidade }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ dispositivo.confiabilidade }}%">{{ dispositivo.confiabilidade }}%</div>
+                                    {% else %}
+                                    <div name="barra" class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="{{ dispositivo.confiabilidade }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ dispositivo.confiabilidade }}%">{{ dispositivo.confiabilidade }}%</div>
+                                    {% endif %}
+                                </div>
+                                <hr>
+                                {% if dispositivo.confiabilidade <= 30 %}
+                                <div>
+                                    <button class="btn btn-danger">Revisão</button>
+                                </div>
+                                {% else %}
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                    {% endfor %}
+                </div>
+            </div>        
+        </section>
+    </main>
+
+    <footer>
+        
+    </footer>
+
+    
+
+
+
+{% endblock content %}
