@@ -20,6 +20,21 @@ body {
     color: var(--navcolor);
 }
 
+.parallax {
+    /* The image used */
+    background-image: url("https://advancedprecisionmachine.com/wp-content/uploads/2021/11/AdobeStock_438549682.jpeg"); 
+    background-position: 50% 113.614px;
+  
+    /* Set a specific height */
+    min-height: 500px;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .card {
     margin-top: 20px;
     margin-left: auto;
